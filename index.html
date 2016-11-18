@@ -25,9 +25,12 @@
 		  <nav>
 		  <div class="nav-wrapper">
 			<a href="#!" class="brand-logo">Logo</a>
-			<ul class="right hide-on-med-and-down">
-			<li><a href="sass.html">Sass</a></li>
-			<li><a href="badges.html">Components</a></li>
+			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+			<ul class="side-nav" id="mobile-demo">
+				<li><a href="sass.html">Sass</a></li>
+				<li><a href="badges.html">Components</a></li>
+				<li><a href="collapsible.html">Javascript</a></li>
+				<li><a href="mobile.html">Mobile</a></li>
 			</ul>
 			</div>
 			</nav>
@@ -36,7 +39,11 @@
 	</div><!-- #header Ends Here --> 
 	<!--Head Layout End -->
 	<main>
-	
+	  <div id="region1"></div>
+
+    <div id="region2">
+        <button id="switcher">Switch HTML</button>
+    </div>
 	
 	</main>
 	<!-- Footer -->
@@ -70,9 +77,29 @@
 	</div><!-- Footer Ends Here -> 
 	<!-- Footer End Here -->
 	</div> <!-- #outerwrap ends here --> 
+	<section id="id1">Umar Welcome Back</section>
 	<!-- Template End here -->
 	<!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript">
+	var state = 0;
+	$( document ).ready(function(){
+	$(".button-collapse").sideNav();
+	var hello = "<div>Hello World!</div>"
+    var goodbye = "#id1"
+    $("#region1").html(hello)
+    $("#switcher").click(function () {
+	    if (state == 0) {
+		$("#region1").load( "sample.html" );
+		
+        state = 1
+        } else {
+        $("#region1").html(hello)
+        state = 0
+        }
+        });
+	});
+	</script>
 </body>
 </html>
