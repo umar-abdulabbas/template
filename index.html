@@ -77,7 +77,7 @@
 	</div><!-- Footer Ends Here -> 
 	<!-- Footer End Here -->
 	</div> <!-- #outerwrap ends here --> 
-	<section id="id1">Umar Welcome Back</section>
+	<section id="id1" style="">Umar Welcome Back</section>
 	<!-- Template End here -->
 	<!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -90,10 +90,12 @@
     var goodbye = "#id1"
     $("#region1").html(hello)
     $("#switcher").click(function () {
-	    if (state == 0) {
-		$("#region1").load( "sample.html" );
 		
-        state = 1
+	    if (state == 0) {
+		$("#region1").load( "pages/sample.html", function(){
+			$( "#x" ).animate({ "left": "0%" }, "fast" );
+		} );
+		state = 1
         } else {
         $("#region1").html(hello)
         state = 0
